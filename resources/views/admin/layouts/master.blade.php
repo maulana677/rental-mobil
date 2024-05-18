@@ -17,7 +17,11 @@
         <div class="row">
             @include('admin.layouts.sidebar')
 
-            @yield('content')
+            <div class="col-lg-10">
+                <main class="py-5 px-3">
+                    {{--  {{ $slot }}  --}}
+                </main>
+            </div>
         </div>
     </div>
 
