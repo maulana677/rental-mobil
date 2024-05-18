@@ -86,12 +86,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="assets/images/logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ asset('admin/assets/images/logo.png') }}" type="image/x-icon">
     <title>Login</title>
 
-    <link rel="stylesheet" href="assets/vendors/bootstrap/css/bootstrap.css">
-    <link rel="stylesheet" href="assets/vendors/boxicons/css/boxicons.min.css">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
+    <link rel="stylesheet" href="{{ asset('admin/assets/vendors/bootstrap/css/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ asset('admin/assets/vendors/boxicons/css/boxicons.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('admin/assets/css/style.css') }}">
 </head>
 
 <body class="bg-soft-blue">
@@ -102,7 +105,7 @@
                 <div class="card border-0">
                     <div class="card-body p-5">
                         <a href="." class="logo justify-content-center mb-5">
-                            <img src="assets/images/logo.png" alt="Logo">
+                            <img src="{{ asset('admin/assets/images/logo.png') }}" alt="Logo">
                             <span>Car Rental</span>
                         </a>
 
@@ -111,7 +114,8 @@
                             @csrf
                             <div class="mb-3">
                                 <label for="email" class="mb-1">Alamat Email</label>
-                                <input type="email" name="email" class="form-control"
+                                <input type="email" name="email"
+                                    class="form-control @error('email') is-invalid @enderror"
                                     placeholder="Tulis alamat email kamu" required autofocus>
 
                                 @error('email')
@@ -122,7 +126,8 @@
                             </div>
                             <div class="mb-3">
                                 <label for="password" class="mb-1">Password</label>
-                                <input type="password" name="password" class="form-control"
+                                <input type="password" name="password"
+                                    class="form-control @error('password') is-invalid @enderror"
                                     placeholder="Masukkan password kamu" required>
 
                                 @error('password')
@@ -143,7 +148,7 @@
         </div>
     </div>
 
-    <script src="assets/vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ asset('admin/assets/vendors/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 </body>
 
 </html>

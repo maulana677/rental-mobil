@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="assets/images/logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ asset('frontend/assets/images/logo.png') }}" type="image/x-icon">
     <title>Car Rental</title>
 
     <link rel="stylesheet" href="{{ asset('frontend/assets/vendors/bootstrap/css/bootstrap.min.css') }}">
@@ -14,27 +14,7 @@
 </head>
 
 <body class="bg-soft-blue">
-    <nav class="navbar navbar-expand-lg bg-white py-3">
-        <div class="container">
-            <a href="." class="navbar-brand logo">
-                <img src="{{ asset('frontend/assets/images/logo.png') }}" alt="Logo"> Car Rental
-            </a>
-            <button id="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navMenu">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navMenu">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a href="register.html" class="btn">Daftar</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="{{ route('login') }}" class="btn btn-primary">Masuk</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    @include('frontend.layouts.navbar')
 
     <section class="py-5">
         <div class="container">
@@ -112,6 +92,81 @@
                                 </div>
                                 <div class="col-12 col-lg-7">
                                     <div class="d-flex align-items-center gap-2">
+                                        <img src="{{ asset('frontend/assets/images/money.png') }}" style="width: 16px;"
+                                            alt="Seat">
+                                        <span class="fs-7">Rp. 715.000/hari</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col">
+                    <a href="#" class="card card-product">
+                        <img src="{{ asset('frontend/assets/images/cars/avanza_lrg.jpg') }}"
+                            class="card-img-top rounded-top-4" alt="Toyota New Yaris GR Sport">
+                        <div class="card-body p-3 p-lg-4">
+                            <h5 class="text-dark fw-semibold mb-3">Toyota Avanza</h5>
+                            <div class="row">
+                                <div class="col-12 col-lg-5">
+                                    <div class="d-flex align-items-center gap-2">
+                                        <img src="{{ asset('frontend/assets/images/seat.png') }}"
+                                            style="width: 16px;" alt="Seat">
+                                        <span class="fs-7">5 seats</span>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-lg-7">
+                                    <div class="d-flex align-items-center gap-2">
+                                        <img src="{{ asset('frontend/assets/images/money.png') }}"
+                                            style="width: 16px;" alt="Seat">
+                                        <span class="fs-7">Rp. 850.000/hari</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col">
+                    <a href="#" class="card card-product">
+                        <img src="{{ asset('frontend/assets/images/cars/innova_lrg.jpg') }}"
+                            class="card-img-top rounded-top-4" alt="Toyota New Yaris GR Sport">
+                        <div class="card-body p-3 p-lg-4">
+                            <h5 class="text-dark fw-semibold mb-3">Toyota Innova</h5>
+                            <div class="row">
+                                <div class="col-12 col-lg-5">
+                                    <div class="d-flex align-items-center gap-2">
+                                        <img src="{{ asset('frontend/assets/images/seat.png') }}"
+                                            style="width: 16px;" alt="Seat">
+                                        <span class="fs-7">6 seats</span>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-lg-7">
+                                    <div class="d-flex align-items-center gap-2">
+                                        <img src="{{ asset('frontend/assets/images/money.png') }}"
+                                            style="width: 16px;" alt="Seat">
+                                        <span class="fs-7">Rp. 1,100.000/hari</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col">
+                    <a href="#" class="card card-product">
+                        <img src="{{ asset('frontend/assets/images/cars/agya_lrg.jpg') }}"
+                            class="card-img-top rounded-top-4" alt="Toyota Agya">
+                        <div class="card-body p-3 p-lg-4">
+                            <h5 class="text-dark fw-semibold mb-3">Toyota Agya</h5>
+                            <div class="row">
+                                <div class="col-12 col-lg-5">
+                                    <div class="d-flex align-items-center gap-2">
+                                        <img src="{{ asset('frontend/assets/images/seat.png') }}"
+                                            style="width: 16px;" alt="Seat">
+                                        <span class="fs-7">4 seats</span>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-lg-7">
+                                    <div class="d-flex align-items-center gap-2">
                                         <img src="{{ asset('frontend/assets/images/money.png') }}"
                                             style="width: 16px;" alt="Seat">
                                         <span class="fs-7">Rp. 715.000/hari</span>
@@ -123,20 +178,22 @@
                 </div>
                 <div class="col">
                     <a href="#" class="card card-product">
-                        <img src="assets/images/cars/avanza_lrg.jpg" class="card-img-top rounded-top-4"
-                            alt="Toyota New Yaris GR Sport">
+                        <img src="{{ asset('frontend/assets/images/cars/avanza_lrg.jpg') }}"
+                            class="card-img-top rounded-top-4" alt="Toyota New Yaris GR Sport">
                         <div class="card-body p-3 p-lg-4">
                             <h5 class="text-dark fw-semibold mb-3">Toyota Avanza</h5>
                             <div class="row">
                                 <div class="col-12 col-lg-5">
                                     <div class="d-flex align-items-center gap-2">
-                                        <img src="assets/images/seat.png" style="width: 16px;" alt="Seat">
+                                        <img src="{{ asset('frontend/assets/images/seat.png') }}"
+                                            style="width: 16px;" alt="Seat">
                                         <span class="fs-7">5 seats</span>
                                     </div>
                                 </div>
                                 <div class="col-12 col-lg-7">
                                     <div class="d-flex align-items-center gap-2">
-                                        <img src="assets/images/money.png" style="width: 16px;" alt="Seat">
+                                        <img src="{{ asset('frontend/assets/images/money.png') }}"
+                                            style="width: 16px;" alt="Seat">
                                         <span class="fs-7">Rp. 850.000/hari</span>
                                     </div>
                                 </div>
@@ -146,20 +203,22 @@
                 </div>
                 <div class="col">
                     <a href="#" class="card card-product">
-                        <img src="assets/images/cars/innova_lrg.jpg" class="card-img-top rounded-top-4"
-                            alt="Toyota New Yaris GR Sport">
+                        <img src="{{ asset('frontend/assets/images/cars/innova_lrg.jpg') }}"
+                            class="card-img-top rounded-top-4" alt="Toyota New Yaris GR Sport">
                         <div class="card-body p-3 p-lg-4">
                             <h5 class="text-dark fw-semibold mb-3">Toyota Innova</h5>
                             <div class="row">
                                 <div class="col-12 col-lg-5">
                                     <div class="d-flex align-items-center gap-2">
-                                        <img src="assets/images/seat.png" style="width: 16px;" alt="Seat">
+                                        <img src="{{ asset('frontend/assets/images/seat.png') }}"
+                                            style="width: 16px;" alt="Seat">
                                         <span class="fs-7">6 seats</span>
                                     </div>
                                 </div>
                                 <div class="col-12 col-lg-7">
                                     <div class="d-flex align-items-center gap-2">
-                                        <img src="assets/images/money.png" style="width: 16px;" alt="Seat">
+                                        <img src="{{ asset('frontend/assets/images/money.png') }}"
+                                            style="width: 16px;" alt="Seat">
                                         <span class="fs-7">Rp. 1,100.000/hari</span>
                                     </div>
                                 </div>
@@ -169,43 +228,22 @@
                 </div>
                 <div class="col">
                     <a href="#" class="card card-product">
-                        <img src="assets/images/cars/agya_lrg.jpg" class="card-img-top rounded-top-4"
-                            alt="Toyota Agya">
-                        <div class="card-body p-3 p-lg-4">
-                            <h5 class="text-dark fw-semibold mb-3">Toyota Agya</h5>
-                            <div class="row">
-                                <div class="col-12 col-lg-5">
-                                    <div class="d-flex align-items-center gap-2">
-                                        <img src="assets/images/seat.png" style="width: 16px;" alt="Seat">
-                                        <span class="fs-7">4 seats</span>
-                                    </div>
-                                </div>
-                                <div class="col-12 col-lg-7">
-                                    <div class="d-flex align-items-center gap-2">
-                                        <img src="assets/images/money.png" style="width: 16px;" alt="Seat">
-                                        <span class="fs-7">Rp. 715.000/hari</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col">
-                    <a href="#" class="card card-product">
-                        <img src="assets/images/cars/avanza_lrg.jpg" class="card-img-top rounded-top-4"
-                            alt="Toyota New Yaris GR Sport">
+                        <img src="{{ asset('frontend/assets/images/cars/avanza_lrg.jpg') }}"
+                            class="card-img-top rounded-top-4" alt="Toyota New Yaris GR Sport">
                         <div class="card-body p-3 p-lg-4">
                             <h5 class="text-dark fw-semibold mb-3">Toyota Avanza</h5>
                             <div class="row">
                                 <div class="col-12 col-lg-5">
                                     <div class="d-flex align-items-center gap-2">
-                                        <img src="assets/images/seat.png" style="width: 16px;" alt="Seat">
+                                        <img src="{{ asset('frontend/assets/images/seat.png') }}"
+                                            style="width: 16px;" alt="Seat">
                                         <span class="fs-7">5 seats</span>
                                     </div>
                                 </div>
                                 <div class="col-12 col-lg-7">
                                     <div class="d-flex align-items-center gap-2">
-                                        <img src="assets/images/money.png" style="width: 16px;" alt="Seat">
+                                        <img src="{{ asset('frontend/assets/images/money.png') }}"
+                                            style="width: 16px;" alt="Seat">
                                         <span class="fs-7">Rp. 850.000/hari</span>
                                     </div>
                                 </div>
@@ -215,66 +253,22 @@
                 </div>
                 <div class="col">
                     <a href="#" class="card card-product">
-                        <img src="assets/images/cars/innova_lrg.jpg" class="card-img-top rounded-top-4"
-                            alt="Toyota New Yaris GR Sport">
+                        <img src="{{ asset('frontend/assets/images/cars/innova_lrg.jpg') }}"
+                            class="card-img-top rounded-top-4" alt="Toyota New Yaris GR Sport">
                         <div class="card-body p-3 p-lg-4">
                             <h5 class="text-dark fw-semibold mb-3">Toyota Innova</h5>
                             <div class="row">
                                 <div class="col-12 col-lg-5">
                                     <div class="d-flex align-items-center gap-2">
-                                        <img src="assets/images/seat.png" style="width: 16px;" alt="Seat">
+                                        <img src="{{ asset('frontend/assets/images/seat.png') }}"
+                                            style="width: 16px;" alt="Seat">
                                         <span class="fs-7">6 seats</span>
                                     </div>
                                 </div>
                                 <div class="col-12 col-lg-7">
                                     <div class="d-flex align-items-center gap-2">
-                                        <img src="assets/images/money.png" style="width: 16px;" alt="Seat">
-                                        <span class="fs-7">Rp. 1,100.000/hari</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col">
-                    <a href="#" class="card card-product">
-                        <img src="assets/images/cars/avanza_lrg.jpg" class="card-img-top rounded-top-4"
-                            alt="Toyota New Yaris GR Sport">
-                        <div class="card-body p-3 p-lg-4">
-                            <h5 class="text-dark fw-semibold mb-3">Toyota Avanza</h5>
-                            <div class="row">
-                                <div class="col-12 col-lg-5">
-                                    <div class="d-flex align-items-center gap-2">
-                                        <img src="assets/images/seat.png" style="width: 16px;" alt="Seat">
-                                        <span class="fs-7">5 seats</span>
-                                    </div>
-                                </div>
-                                <div class="col-12 col-lg-7">
-                                    <div class="d-flex align-items-center gap-2">
-                                        <img src="assets/images/money.png" style="width: 16px;" alt="Seat">
-                                        <span class="fs-7">Rp. 850.000/hari</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col">
-                    <a href="#" class="card card-product">
-                        <img src="assets/images/cars/innova_lrg.jpg" class="card-img-top rounded-top-4"
-                            alt="Toyota New Yaris GR Sport">
-                        <div class="card-body p-3 p-lg-4">
-                            <h5 class="text-dark fw-semibold mb-3">Toyota Innova</h5>
-                            <div class="row">
-                                <div class="col-12 col-lg-5">
-                                    <div class="d-flex align-items-center gap-2">
-                                        <img src="assets/images/seat.png" style="width: 16px;" alt="Seat">
-                                        <span class="fs-7">6 seats</span>
-                                    </div>
-                                </div>
-                                <div class="col-12 col-lg-7">
-                                    <div class="d-flex align-items-center gap-2">
-                                        <img src="assets/images/money.png" style="width: 16px;" alt="Seat">
+                                        <img src="{{ asset('frontend/assets/images/money.png') }}"
+                                            style="width: 16px;" alt="Seat">
                                         <span class="fs-7">Rp. 1,100.000/hari</span>
                                     </div>
                                 </div>
@@ -286,19 +280,7 @@
         </div>
     </section>
 
-    <footer class="py-5">
-        <div class="container">
-            <div class="d-flex flex-column flex-md-row align-items-center justify-content-between gap-3">
-                <p class="mb-0 fs-7 text-secondary">
-                    &copy; 2024 Onlenkan Academy <br>
-                    A division of Onlenkan
-                </p>
-                <a href="https://onlenkan.com" class="mb-0 fs-7 link">
-                    Onlenkan / About
-                </a>
-            </div>
-        </div>
-    </footer>
+    @include('frontend.layouts.footer')
 
     <script src="{{ asset('/frontend/assets/vendors/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 
