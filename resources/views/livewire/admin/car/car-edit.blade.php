@@ -3,7 +3,7 @@
         <a wire:navigate href="{{ route('admin.daftar-mobil.index') }}" class="btn btn-light">
             <i class="bx bx-chevron-left"></i>
         </a>
-        <h2 class="text-dark fw-semibold mb-0">Tambah Mobil</h2>
+        <h2 class="text-dark fw-semibold mb-0">Edit Mobil</h2>
     </div>
 
     <div class="card border-0">
@@ -34,17 +34,24 @@
                         <label for="harga" class="form-label">Harga</label>
                         <input type="number" wire:model="price" id="harga" class="form-control">
                     </div>
+                    <div class="col-lg-6">
+                        <label for="status" class="form-label">Status</label>
+                        <select wire:model="status" id="status" class="form-select">
+                            <option value="On Going">On Going</option>
+                            <option value="Available">Available</option>
+                        </select>
+                    </div>
                     <div class="col-12">
                         <label class="form-label">Foto Mobil</label>
-                        <label for="image" class="file">
+                        <label for="photo" class="file">
                             <i class="bx bx-image-add fs-1 text-primary"></i>
                         </label>
-                        <input type="file" wire:model="image" id="image" class="d-none">
+                        <input type="file" wire:model="image" id="photo" class="d-none">
                     </div>
                 </div>
 
                 <button class="btn btn-primary" type="submit">
-                    Simpan Baru
+                    Ubah Data
                 </button>
             </form>
         </div>

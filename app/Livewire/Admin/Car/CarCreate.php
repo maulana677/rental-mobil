@@ -26,7 +26,7 @@ class CarCreate extends Component
             'production_year' => $this->production_year,
             'seats' => $this->seats,
             'price' => $this->price,
-            'image' => $this->image,
+            'image' => $image,
         ]);
 
         $this->redirectRoute('admin.daftar-mobil.index', navigate: true);

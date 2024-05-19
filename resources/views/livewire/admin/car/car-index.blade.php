@@ -30,8 +30,8 @@
                                 <tr class="align-middle">
                                     <td>{{ $loop->iteration }}</td>
                                     <td>
-                                        <img src="{{ url('storage/' . $item->image) }}" alt="Mobil 1"
-                                            class="rounded-md" style="width: 80px;">
+                                        <img src="{{ url('storage/' . $item->image) }}" class="rounded-md"
+                                            style="width: 80px;">
                                     </td>
                                     <td>{{ $item->brand }}</td>
                                     <td>{{ $item->model }}</td>
@@ -54,10 +54,19 @@
                                                 <i class="bx bx-dots-horizontal"></i>
                                             </button>
                                             <ul class="dropdown-menu">
-                                                <li><a class="dropdown-item" href="#">Edit</a></li>
-                                                <li><a class="dropdown-item" href="#"
+                                                <li>
+                                                    <a wire:navigate class="dropdown-item"
+                                                        href="{{ route('admin.daftar-mobil.edit', $item->id) }}">
+                                                        Edit
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="dropdown-item" href="#"
                                                         wire:confirm="Apakah kamu yakin ingin menghapus data ini"
-                                                        wire:click="delete({{ $item->id }})">Hapus</a></li>
+                                                        wire:click="delete({{ $item->id }})">
+                                                        Hapus
+                                                    </a>
+                                                </li>
                                             </ul>
                                         </div>
                                     </td>
