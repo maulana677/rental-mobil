@@ -17,7 +17,7 @@ class Dashboard extends Component
         $this->customers = User::count();
     }
 
-    #[Layout('layouts.admin')]
+    #[Layout('admin.layouts.master')]
     public function render()
     {
         return view('livewire.admin.dashboard');

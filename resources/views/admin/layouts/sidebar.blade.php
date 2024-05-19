@@ -1,7 +1,7 @@
 <div class="col-lg-2 bg-white min-h-screen py-3 px-2 px-lg-3 sidebar">
     <div class="d-flex align-items-center justify-content-between">
-        <a href="dashboard.html" class="logo fs-5">
-            <img src="assets/images/logo.png" alt="logo">
+        <a wire:navigate href="{{ route('admin.dashboard') }}" class="logo fs-5">
+            <img src="{{ url('assets/images/logo.png') }}" alt="logo">
             <span>Car Rental</span>
         </a>
         <button class="btn btn-light d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#navMenu">
@@ -11,10 +11,12 @@
     <hr class="my-4 d-none d-lg-block border-secondary">
     <div class="menus d-none d-lg-block">
         <p class="mb-2 text-secondary fw-semibold fs-7">Utama</p>
-        <a href="dashboard.html" class="link-menu btn active">
+        <a wire:navigate href="{{ route('admin.dashboard') }}"
+            class="link-menu btn {{ request()->is('admin') ? 'active' : '' }}">
             <i class="bx bxs-dashboard"></i> Dashboard
         </a>
-        <a href="dashboard-cars.html" class="link-menu btn">
+        <a wire:navigate href="{{ route('admin.daftar-mobil.index') }}"
+            class="link-menu btn {{ request()->is('admin/daftar-mobil*') ? 'active' : '' }}">
             <i class="bx bxs-car"></i> Daftar Mobil
         </a>
         <a href="dashboard-sliders.html" class="link-menu btn">
@@ -56,10 +58,12 @@
     <div class="offcanvas-body">
         <div class="sidebar">
             <p class="mb-2 text-secondary fw-semibold fs-7">Utama</p>
-            <a href="dashboard.html" class="link-menu btn active">
+            <a wire:navigate href="{{ route('admin.dashboard') }}"
+                class="link-menu btn {{ request()->is('admin') ? 'active' : '' }}">
                 <i class="bx bxs-dashboard"></i> Dashboard
             </a>
-            <a href="dashboard-cars.html" class="link-menu btn">
+            <a wire:navigate href="{{ route('admin.daftar-mobil.index') }}"
+                class="link-menu btn {{ request()->is('admin/daftar-mobil*') ? 'active' : '' }}">
                 <i class="bx bxs-car"></i> Daftar Mobil
             </a>
 

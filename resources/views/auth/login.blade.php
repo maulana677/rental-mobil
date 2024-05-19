@@ -32,4 +32,7 @@
             Belum Memiliki Akun? <a href="{{ route('register') }}" class="text-decoration-underline text-primary">Daftar</a>
         </p>
     </form>
+    <a href="{{ route('google.redirect') }}" class="btn btn-light border w-100 mb-5 mt-5">
+        Login with Google
+    </a>
 @endsection
